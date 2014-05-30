@@ -22,7 +22,7 @@ Server
   var server = new rpc.server;  
 
   server.loadModules(__dirname + '/modules/', function () {
-    var zmq = new zmqTransport({url: 'tcp://127.0.0.1:5555'});
+    var zmq = zmqTransport({url: 'tcp://127.0.0.1:5555'});
     zmq.listen(server);
   });
 ```
@@ -33,7 +33,7 @@ Client:
   var rpc = require('jrpc2');
   var zmqTransport = require('zmq-transport');
 
-  var zmq = new zmqTransport({url: 'tcp://127.0.0.1:5555'});
+  var zmq = zmqTransport({url: 'tcp://127.0.0.1:5555'});
 
   var client = new rpc.client(zmq);
 
