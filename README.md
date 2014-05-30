@@ -6,7 +6,7 @@ ZeroMQ transport for JRPC2
 INSTALL
 ======
 ```
-npm install zmqTransport
+npm install zmq-transport
 ```
 
 
@@ -17,7 +17,7 @@ Server
 
 ```javascript
   var rpc = require('jrpc2');
-  var zmqTransport = require('zmqTransport');
+  var zmqTransport = require('zmq-transport');
 
   var server = new rpc.server;  
 
@@ -31,7 +31,7 @@ Client:
 
 ```javascript
   var rpc = require('jrpc2');
-  var zmqTransport = require('zmqTransport');
+  var zmqTransport = require('zmq-transport');
 
   var zmq = new zmqTransport({url: 'tcp://127.0.0.1:5555'});
 
