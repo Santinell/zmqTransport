@@ -1,8 +1,8 @@
 var should = require("chai").should();
-var fs = require("fs");
 var rpc = require("jrpc2");
+var zmqTransport = require("../");
 var server = null;
-var zmqTransport = null;
+var zmq = null;
 var zmqClient = null;
 
 describe("Server", function () {

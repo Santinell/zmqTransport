@@ -1,3 +1,3 @@
 #!/bin/sh
-coffee -c -o index.coffee
+coffee -c index.coffee
 mocha -R spec

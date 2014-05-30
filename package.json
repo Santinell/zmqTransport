@@ -1,6 +1,6 @@
 {
   "author": "Santinell",
-  "name": "zmqTransport",
+  "name": "zmq-transport",
   "description": "ZeroMQ transport for jrpc2",
   "version": "0.0.1",
   "keywords": [
