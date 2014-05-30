@@ -1,0 +1,31 @@
+{
+  "author": "Santinell",
+  "name": "zmqTransport",
+  "description": "ZeroMQ transport for jrpc2",
+  "version": "0.0.1",
+  "keywords": [
+    "jrpc2",
+    "zmq",
+    "zeromq"
+  ],
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "zmq": "*"
+  },
+  "peerDependencies": {
+    "jrpc2": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*",
+    "mocha": "*",
+    "chai": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Santinell/zmqTransport.git"
+  },
+  "homepage": "https://github.com/Santinell/zmqTransport",
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
