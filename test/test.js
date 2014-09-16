@@ -27,46 +27,7 @@ describe("Server", function () {
     server.should.have.property("methods");
     server.methods.should.have.property("sum");
     server.methods["sum"].should.be.an["instanceof"](Function);
-  });
-
-  it("should have sucess expose function with promise", function () {
-    server.expose("reverse", function (num) {
-      return Q.delay(500).then(function () {
-        return num*-1;
-      });
-    });
-    server.should.have.property("methods");
-    server.methods.should.have.property("reverse");
-    server.methods["reverse"].execute(server, [13]).should.have.property("then");
-    server.methods["reverse"].should.be.an["instanceof"](Function);
-  });
-
-  it("should have success module expose", function () {
-    server.exposeModule("math", {
-      log: function (num, base) {
-        return Math.log(num) / Math.log(base);
-      }
-    });
-    server.should.have.property("methods");
-    server.methods.should.have.property("math.log");
-    server.methods["math.log"].should.be.an["instanceof"](Function);
-  });
-
-  it("should correct work with context", function () {
-    server.expose("getName", function () {
-      return this.name;
-    });
-    var context = {name: "Ted"};
-    server.methods["getName"].execute(context, []).should.equal("Ted");
-  });
-
-  it("should expose notification", function () {
-    server.expose("console", function (message) {
-      console.log("    >>" + message);
-    });
-    server.methods.should.have.property("console");
-    should.equal(server.methods["console"]("Hello server"), undefined);
-  });
+  });  
 });
 
 
