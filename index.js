@@ -31,4 +31,3 @@ module.exports = exports = (function zmqTransport () {
     };
     return zmqTransport;
 })();
-

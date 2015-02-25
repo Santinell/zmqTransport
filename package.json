@@ -10,14 +10,17 @@
   ],
   "readmeFilename": "README.md",
   "dependencies": {
-    "zmq": "~2.0"
+    "zmq": "^2.10"
   },
   "peerDependencies": {
-    "jrpc2": "~0.4"
+    "jrpc2": "^0.4"
   },
   "devDependencies": {
-    "mocha": "~2.1",
-    "chai": "~2.0"
+    "mocha": "^2.1",
+    "chai": "^2.0"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
