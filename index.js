@@ -23,7 +23,7 @@ module.exports = exports = (function zmqTransport () {
         socket = zmq.socket('rep');
         return socket.bind(this.params.url, function (err) {
             return socket.on('message', function (data) {
-                return server.handleRequest(data.toString(), {}, function (answer) {
+                return server.handleCall(data.toString(), {}, function (answer) {
                     return socket.send(JSON.stringify(answer));
                 });
             });

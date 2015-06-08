@@ -2,7 +2,7 @@
   "author": "Santinell",
   "name": "zmq-transport",
   "description": "ZeroMQ transport for jrpc2",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "keywords": [
     "jrpc2",
     "zmq",
@@ -10,14 +10,14 @@
   ],
   "readmeFilename": "README.md",
   "dependencies": {
-    "zmq": "^2.10"
+    "zmq": "^2.11"
   },
   "peerDependencies": {
-    "jrpc2": "^0.4"
+    "jrpc2": "^1.0"
   },
   "devDependencies": {
     "mocha": "^2.1",
-    "chai": "^2.0"
+    "chai": "^3.0"
   },
   "scripts": {
     "test": "mocha"

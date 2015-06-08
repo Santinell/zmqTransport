@@ -8,7 +8,7 @@ var zmqClient = null;
 describe("Server", function () {
 
   it("should have context", function () {
-    server = new rpc.server();
+    server = new rpc.Server();
     server.should.have.property("context");
   });
 
@@ -24,10 +24,10 @@ describe("Server", function () {
     server.expose("sum", function (a, b) {
       return a + b;
     });
-    server.should.have.property("methods");
-    server.methods.should.have.property("sum");
-    server.methods["sum"].should.be.an["instanceof"](Function);
-  });  
+    server.should.have.property("modules");
+    server.modules.methods.should.have.property("sum");
+    server.modules.methods["sum"].should.be.an["instanceof"](Function);
+  });
 });
 
 
@@ -67,12 +67,12 @@ describe("zmqClient", function () {
 
   it("should throw error because of no transport", function () {
     (function () {
-      new rpc.client;
+      new rpc.Client();
     }).should.throw(Error);
   });
 
   it("should have transport and id", function () {
-    zmqClient = new rpc.client(zmq);
+    zmqClient = new rpc.Client(zmq);
     zmqClient.should.have.property("transport");
     zmqClient.should.have.property("id");
     zmqClient.id.should.equal(0);
@@ -86,6 +86,6 @@ describe("zmqClient", function () {
       obj.should.deep.equal({id: 1, jsonrpc: '2.0', result: 55});
       done();
     };
-    zmqClient.call("sum", [22, 33], callback);
+    zmqClient.invoke("sum", [22, 33], callback);
   });
 });

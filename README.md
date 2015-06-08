@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Santinell/zmqTransport.svg?branch=master)](https://travis-ci.org/Santinell/zmqTransport)
+
 zmqTransport
 =====
 
@@ -19,7 +21,7 @@ Server
   var rpc = require('jrpc2');
   var zmqTransport = require('zmq-transport');
 
-  var server = new rpc.server;  
+  var server = new rpc.Server();  
 
   server.loadModules(__dirname + '/modules/', function () {
     var zmq = new zmqTransport({url: 'tcp://127.0.0.1:5555'});
@@ -35,9 +37,9 @@ Client:
 
   var zmq = new zmqTransport({url: 'tcp://127.0.0.1:5555'});
 
-  var client = new rpc.client(zmq);
+  var client = new rpc.Client(zmq);
 
-  client.call('users.auth', ["admin","swd"], function (err, raw) {
+  client.invoke('users.auth', ["admin","swd"], function (err, raw) {
     console.log(err, raw);
   });
 ```
